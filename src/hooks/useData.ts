@@ -127,17 +127,16 @@ export function useManifest(tripId: string) {
 }
 
 // Booking hooks
-export function useBookings(userId: string) {
+export function useBookings(userId?: string) {
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   const fetchBookings = useCallback(async () => {
-    if (!userId) return;
     try {
       setLoading(true);
       setError(null);
-      const data = await simulation.getUserBookings(userId);
+      const data = await simulation.getUserBookings(userId || '');
       setBookings(data);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to fetch bookings');

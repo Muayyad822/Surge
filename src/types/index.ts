@@ -32,6 +32,8 @@ export interface Trip {
   updatedAt: Date;
   vessel?: Vessel;
   occupancy?: number;
+  boatName?: string;
+  capacity?: number;
 }
 
 export interface Manifest {
@@ -43,6 +45,7 @@ export interface Manifest {
   updatedAt: Date;
   trip?: Trip;
   user?: User;
+  commuter?: User;
 }
 
 export interface Booking {
