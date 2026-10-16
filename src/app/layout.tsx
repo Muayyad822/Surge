@@ -7,6 +7,15 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 export const metadata: Metadata = {
   title: 'Surge - Lagos Waterway Transit',
   description: 'The fastest way across Lagos waterways. Book ferry trips, track vessels, and manage operations.',
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/assets/favicon.png', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/assets/icon.png' },
+    ],
+  },
 };
 
 export default function RootLayout({
